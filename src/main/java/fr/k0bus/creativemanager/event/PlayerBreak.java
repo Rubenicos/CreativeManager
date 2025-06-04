@@ -39,7 +39,7 @@ public class PlayerBreak implements Listener {
 	 *
 	 * @param e the event.
 	 */
-	@EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
+	@EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
 	public void onBreak(BlockBreakEvent e) {
 		Player p = e.getPlayer();
 		if(!p.getGameMode().equals(GameMode.CREATIVE)) return;
@@ -51,7 +51,7 @@ public class PlayerBreak implements Listener {
 			e.setCancelled(true);
 		}
 	}
-	@EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
+	@EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
 	public void checkBlacklist(BlockBreakEvent e)
 	{
 		Player p = e.getPlayer();
@@ -70,7 +70,7 @@ public class PlayerBreak implements Listener {
 		}
 	}
 
-	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
+	@EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
 	public void checkLog(BlockBreakEvent e)
 	{
 		List<Block> blocks = BlockUtils.getBlockStructure(e.getBlock());

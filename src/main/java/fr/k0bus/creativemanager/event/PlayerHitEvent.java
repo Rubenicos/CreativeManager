@@ -61,7 +61,7 @@ public class PlayerHitEvent implements Listener {
 	 *
 	 * @param e the event.
 	 */
-	@EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
+	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
 	public void onProjectileHit(ProjectileHitEvent e) {
 		if(!enableProjectile) return;
 		ProjectileSource source = e.getEntity().getShooter();

@@ -30,7 +30,7 @@ public class ProjectileThrow implements Listener {
 	 *
 	 * @param e the event.
 	 */
-	@EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
+	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
 	public void onDrop(ProjectileLaunchEvent e) {
 		ProjectileSource source = e.getEntity().getShooter();
 		if (source instanceof Player p) {

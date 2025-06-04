@@ -56,7 +56,7 @@ public class InventoryMove implements Listener {
 	 *
 	 * @param e the event.
 	 */
-	@EventHandler(priority = EventPriority.LOWEST)
+	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onInventoryClick(InventoryCreativeEvent e) {
 		Player player = (Player) e.getWhoClicked();
 		if (e.getClick().equals(ClickType.DROP) || e.getClick().equals(ClickType.CONTROL_DROP) ||
@@ -116,7 +116,7 @@ public class InventoryMove implements Listener {
 		}
 	}
 
-	@EventHandler(priority = EventPriority.LOWEST)
+	@EventHandler(priority = EventPriority.HIGHEST)
 	public void checkArmorClick(final InventoryCreativeEvent e) {
 		Player p = (Player) e.getWhoClicked();
 		if (!p.getGameMode().equals(GameMode.CREATIVE)) return;
@@ -130,7 +130,7 @@ public class InventoryMove implements Listener {
 		}
 	}
 
-	@EventHandler(ignoreCancelled = true, priority = EventPriority.LOWEST)
+	@EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
 	public void checkEnchantAndPotion(final InventoryClickEvent e)
 	{
 		Player p = (Player) e.getWhoClicked();
@@ -159,7 +159,7 @@ public class InventoryMove implements Listener {
 		}
 	}
 
-	@EventHandler(ignoreCancelled = true, priority = EventPriority.LOWEST)
+	@EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
 	public void checkBlackListInteract(final  InventoryInteractEvent e) {
 		if(e.getInventory().getHolder() instanceof Player)
 		{
@@ -178,7 +178,7 @@ public class InventoryMove implements Listener {
 		}
 	}
 
-	private boolean isBlackListed(ItemStack item, Player player, List<String> blacklist) {
+	private Boolean isBlackListed(ItemStack item, Player player, List<String> blacklist) {
 		if (item == null) {
 			return false;
 		}
@@ -202,7 +202,7 @@ public class InventoryMove implements Listener {
 	 * @param p    the player.
 	 * @return the item stack.
 	 */
-	private ItemStack addLore(ItemStack item, Player p, boolean checkNbt) {
+	private ItemStack addLore(ItemStack item, Player p, boolean check) {
 		if (item == null)
 			return null;
 		if (p == null)
@@ -211,7 +211,7 @@ public class InventoryMove implements Listener {
 		if (meta == null) {
 			return item;
 		}
-		if (checkNbt && nbt_enabled) {
+		if (check && nbt_enabled) {
 			final PersistentDataContainer container = meta.getPersistentDataContainer();
 			if (container.has(protectedKey, PersistentDataType.INTEGER)) {
 				return item;

@@ -34,7 +34,7 @@ public class InventoryOpen implements Listener {
      *
      * @param e the event.
      */
-    @EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
+    @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onInventoryOpen(InventoryOpenEvent e) {
         if (e.getPlayer() instanceof Player p) {
             if (p.getGameMode().equals(GameMode.CREATIVE) && CreativeManager.getSettings().getProtection(Protections.CONTAINER)) {
@@ -54,7 +54,7 @@ public class InventoryOpen implements Listener {
      *
      * @param e the event.
      */
-    @EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
+    @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onGuiOpen(InventoryOpenEvent e) {
         if (e.getPlayer() instanceof Player p) {
             if (p.getGameMode().equals(GameMode.CREATIVE) && CreativeManager.getSettings().getProtection(Protections.GUI)) {

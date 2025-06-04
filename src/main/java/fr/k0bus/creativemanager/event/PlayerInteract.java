@@ -103,7 +103,7 @@ public class PlayerInteract implements Listener {
             e.setCancelled(true);
         }
     }
-    @EventHandler(priority=EventPriority.LOWEST)
+    @EventHandler(priority=EventPriority.HIGHEST)
     public void checkSpawnEgg(PlayerInteractEvent e)
     {
         Player p = e.getPlayer();

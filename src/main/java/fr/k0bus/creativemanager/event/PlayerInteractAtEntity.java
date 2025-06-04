@@ -32,7 +32,7 @@ public class PlayerInteractAtEntity implements Listener {
      *
      * @param e the event.
      */
-    @EventHandler(ignoreCancelled = true, priority = EventPriority.LOWEST)
+    @EventHandler(ignoreCancelled = true, priority = EventPriority.MONITOR)
     public void onUse(PlayerInteractAtEntityEvent e) {
         Player p = e.getPlayer();
         if(!p.getGameMode().equals(GameMode.CREATIVE)) return;

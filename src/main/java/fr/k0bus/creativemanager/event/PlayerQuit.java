@@ -29,7 +29,7 @@ public class PlayerQuit implements Listener {
 	 *
 	 * @param e the event.
 	 */
-	@EventHandler(ignoreCancelled = true, priority = EventPriority.MONITOR)
+	@EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
 	public void onQuit(PlayerQuitEvent e) {
 		Player p = e.getPlayer();
 		InventoryManager im = new InventoryManager(p, plugin);
@@ -41,7 +41,7 @@ public class PlayerQuit implements Listener {
 	 *
 	 * @param e the event.
 	 */
-	@EventHandler(ignoreCancelled = true, priority = EventPriority.MONITOR)
+	@EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
 	public void onKicked(PlayerKickEvent e) {
 		Player p = e.getPlayer();
 		InventoryManager im = new InventoryManager(p, plugin);
